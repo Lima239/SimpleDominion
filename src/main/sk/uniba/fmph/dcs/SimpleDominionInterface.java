@@ -1,10 +1,11 @@
 package sk.uniba.fmph.dcs;
 
 import java.util.Optional; 
- 
+
+/* This is the interface player can interact with */
 interface SimpleDominionInterface {
-    public Optional<GameState> playCard(int handIdx);
-    public Optional<GameState> endPlayCardPhase();
-    public Optional<GameState> buyCard(int buyCardIdx);
-    public Optional<GameState> endTurn();
+    public boolean playCard(int handIdx);
+    public boolean endPlayCardPhase();
+    public boolean buyCard(int buyCardIdx);
+    public boolean endTurn();
 }
