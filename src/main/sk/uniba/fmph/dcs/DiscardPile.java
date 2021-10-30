@@ -6,10 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class DiscardPile {
-    List<CardInterface> cards;
+    private List<CardInterface> cards;
 
-    public DiscardPile(List<CardInterface> _cards) {
-        cards = _cards;
+    public DiscardPile(List<CardInterface> cards) {
+        this.cards = new ArrayList<>();
+        this.cards.addAll(cards);
+    }
+
+    public DiscardPile() {
+        this.cards = new ArrayList<>();
     }
         
     public Optional<CardInterface> getTopCard() {
@@ -17,12 +22,16 @@ public class DiscardPile {
         return Optional.of(cards.get(cards.size()-1));
     }
         
-    public void addCards(List<CardInterface> _cards) {
-        cards.addAll(_cards);
+    public void addCards(List<CardInterface> cards) {
+        this.cards.addAll(cards);
     }
-        
+
+    public void addCard(CardInterface card) {
+        this.cards.add(card);
+    }
+
     public int getSize() {
-        return cards.size();
+        return this.cards.size();
     }
         
     public List<CardInterface> shuffle() {
