@@ -1,2 +1,4 @@
-package sk.uniba.fmph.dcs;public class GameCard {
+package sk.uniba.fmph.dcs;
+
+public class GameCard {
 }
