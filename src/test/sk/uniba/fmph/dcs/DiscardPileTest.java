@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-
 class FakeCard implements CardInterface {
     private GameCardType _cardType;
     
@@ -19,6 +18,7 @@ class FakeCard implements CardInterface {
     public GameCardType cardType() {
     	return _cardType;
     }
+    public int getCardCost() { return 1; }
 }
 
 
@@ -30,8 +30,9 @@ public class DiscardPileTest  {
         assertTrue(pile.getTopCard().isPresent());
         assertEquals(pile.getTopCard().get().cardType().getName(), string);
     }
-        
-    private void assertTopIsNone(DiscardPile  pile) {
+
+
+    private void assertTopIsNone(DiscardPile pile) {
         assertTrue(pile.getTopCard().isEmpty());
     }
 
