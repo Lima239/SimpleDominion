@@ -1,9 +1,32 @@
 package sk.uniba.fmph.dcs;
 
-public class Card {
-    public String name;
-    public String description;
-    public int cost;
+public class Card implements CardInterface {
+    private String name;
+    private String description;
+    private int cost;
+    private GameCardType cardType;
+
+    public Card(String name, String description, int cost, GameCardType cardType){
+        this.name = name;
+        this.description = description;
+        this.cost = cost;
+        this.cardType = cardType;
+
+    }
+    public Card( GameCardType cardType){
+        this.cardType = cardType;
+    }
+    public int getCardCost(){
+        return this.cost;
+    }
+
+    public GameCardType cardType(){
+        return this.cardType;
+    }
+
+    public void evaluate(TurnStatus ts) {
+
+    }
 
     @Override
     public int hashCode() {
